@@ -24,7 +24,7 @@ const Hero = () => {
           {/* Video Element */}
           <video
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            src="/src/assets/office.mp4"
+            src="/src/assets/Proper Video.mp4"
             controls
             autoPlay
             muted
