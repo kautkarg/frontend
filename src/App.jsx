@@ -1,11 +1,15 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import Cards from "./components/Cards";
+import Comparison from "./components/Comparison";
+
 
 function App(){
   return(
     <>
-      <NavBar />
-      <Hero />
+      <Hero/>
+      <Cards />
+      <Comparison />
     </>
   );
 }
