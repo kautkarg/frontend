@@ -10,6 +10,8 @@ import TestimonialsSection from './components/TestimonialsSection';
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import Comparison from "./components/Comparison";
+import Work from "./components/Work";
+import FAQ from "./components/FAQ";
 
 function App() {
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -78,6 +80,8 @@ function App() {
           <Hero/>
           <Cards />
           <Comparison />
+          <Work/>
+          <FAQ/>
       </div>
     </div>
   );
