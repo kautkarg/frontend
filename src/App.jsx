@@ -77,8 +77,8 @@ function App() {
           <PartnersSection />
         </div>
         <TestimonialsSection />
-          <Hero/>
-          <Cards />
+        <Hero/>
+        <Cards />
           <Comparison />
           <Work/>
           <FAQ/>

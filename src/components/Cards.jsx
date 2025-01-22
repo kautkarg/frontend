@@ -1,7 +1,7 @@
 const Cards = () => {
   return (
     <div
-      id="services"
+      id="process"
       className="w-full max-w-[1260px] mx-auto flex flex-col items-center gap-12 px-6 md:px-8 py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white"
     >
       {/* Section Header */}

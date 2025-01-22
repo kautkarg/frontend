@@ -30,7 +30,7 @@ const FAQFooter = () => (
 );
 
 const FAQ = () => (
-  <div className="bg-gray-900 text-white min-h-screen py-8">
+  <div id="faq" className="bg-gray-900 text-white min-h-screen py-8">
     <div className="container mx-auto">
       <FAQHeader />
       <FAQSection />
