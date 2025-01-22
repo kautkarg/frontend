@@ -11,7 +11,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 function App() {
   const [scrollHeight, setScrollHeight] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
-
+  const loadRef = useRef();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
