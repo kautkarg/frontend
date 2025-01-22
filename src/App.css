@@ -5,3 +5,31 @@
   color: red;
   font-size: xx-large;
 }
+
+.loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #0f0; 
+  width: 0;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.7); 
+  animation: neonGlow 1.5s ease-in-out infinite alternate; 
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5);
+    transform: scaleX(1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 1);
+    transform: scaleX(1.05);
+  }
+}
+
+
+.scroll-container {
+  height: 100vh; 
+}
