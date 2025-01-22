@@ -53,11 +53,9 @@ function App() {
   useEffect(() => {
     if (scrollHeight > 0) {
       const progress = (scrollPosition / scrollHeight) * 100;
-
       gsap.to('.loader-bar', {
         width: `${progress}%`,
-        duration: 0.5, 
-        ease: 'power2.out', 
+        duration: 0.1, 
       });
     }
   }, [scrollPosition, scrollHeight]);
