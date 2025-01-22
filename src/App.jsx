@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
@@ -13,6 +12,7 @@ import Cards from "./components/Cards";
 import Comparison from "./components/Comparison";
 import Work from "./components/Work";
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 
 function App() {
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -80,22 +80,12 @@ function App() {
         <TestimonialsSection />
         <Hero/>
         <Cards />
-          <Comparison />
-          <Work/>
-          <FAQ/>
+        <Comparison />
+        <Work/>
+        <FAQ/>
+        <Footer />
       </div>
     </div>
-=======
-import "./App.css";
-
-import Footer from "./components/Footer";
-function App(){
-  return(
-    <>
-      
-      <Footer />
-    </>
->>>>>>> purva
   );
 }
 
