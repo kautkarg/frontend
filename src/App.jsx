@@ -1,11 +1,12 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
+import Work from "./components/Work";
+import FAQ from "./components/FAQ";
 
 function App(){
   return(
     <>
-      <NavBar />
-      <Hero />
+    <Work/>
+    <FAQ/>
     </>
   );
 }
