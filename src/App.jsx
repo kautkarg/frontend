@@ -7,11 +7,14 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PartnersSection from './components/PartnersSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import Hero from "./components/Hero";
+import Cards from "./components/Cards";
+import Comparison from "./components/Comparison";
 
 function App() {
   const [scrollHeight, setScrollHeight] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const loadRef = useRef();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -72,21 +75,11 @@ function App() {
           <PartnersSection />
         </div>
         <TestimonialsSection />
+          <Hero/>
+          <Cards />
+          <Comparison />
       </div>
     </div>
-import "./App.css";
-import Hero from "./components/Hero";
-import Cards from "./components/Cards";
-import Comparison from "./components/Comparison";
-
-
-function App(){
-  return(
-    <>
-      <Hero/>
-      <Cards />
-      <Comparison />
-    </>
   );
 }
 
