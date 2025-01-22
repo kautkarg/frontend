@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 
 ::-webkit-scrollbar {
   width: 12px; 
@@ -26,3 +27,5 @@
 }
 
 
+=======
+>>>>>>> Vedant
