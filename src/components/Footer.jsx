@@ -23,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen text-white font-sans bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="flex flex-col min-h-screen text-white font-sans">
       {/* Section Above Footer */}
       <section className="text-center py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-400">
@@ -65,7 +65,7 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full py-12 px-4 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-700 relative">
+      <footer className="w-full py-6 px-4 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-700 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Section */}
           <div>
@@ -106,7 +106,37 @@ const App = () => {
                 </svg>
               </a>
 
-              {/* More social icons (e.g., Twitter, Instagram) */}
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-transform transform hover:scale-110"
+                aria-label="GitHub"
+              >
+                {/* GitHub Icon */}
+                <svg
+                  className="w-6 h-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.405 1.021.006 2.048.139 3.006.405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.873.118 3.176.767.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.22v3.293c0 .322.218.694.825.576 4.765-1.587 8.2-6.084 8.2-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-transform transform hover:scale-110"
+                aria-label="Twitter"
+              >
+                {/* Twitter Icon */}
+                <svg
+                  className="w-6 h-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.92 2.203-4.92 4.917 0 .386.045.762.127 1.124-4.087-.205-7.713-2.164-10.141-5.144-.423.725-.666 1.561-.666 2.457 0 1.694.863 3.188 2.175 4.065-.802-.026-1.555-.246-2.214-.615v.062c0 2.367 1.685 4.342 3.918 4.788-.41.111-.843.171-1.287.171-.314 0-.615-.031-.916-.088.631 1.953 2.445 3.376 4.604 3.415-1.68 1.319-3.809 2.104-6.102 2.104-.394 0-.779-.023-1.17-.067 2.179 1.396 4.768 2.212 7.548 2.212 9.054 0 14.002-7.496 14.002-13.986 0-.21-.004-.423-.014-.632.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -136,6 +166,27 @@ const App = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Legal Links */}
+        <div className="text-center mt-8">
+          <ul className="flex justify-center gap-4 text-sm text-gray-400">
+            <li>
+              <a href="#" className="hover:underline">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Sitemap
+              </a>
+            </li>
+          </ul>
         </div>
 
         {/* Back to Top Button */}
