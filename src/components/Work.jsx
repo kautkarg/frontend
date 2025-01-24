@@ -25,21 +25,21 @@ const Card = ({ title, description, icon }) => (
 
 const CardSection = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
-    <Card 
-      title="Contract-Based Work" 
-      description="Get the expertise you need with the long-term commitment." 
-      icon="C" 
+    <Card
+      title="Contract-Based Work"
+      description="Get the expertise you need with the long-term commitment."
+      icon="C"
     />
-    <Card 
-      title="Project-Based Work" 
-      description="From building a website to launching a new marketing campaign, get it done." 
-      icon="P" 
+    <Card
+      title="Project-Based Work"
+      description="From building a website to launching a new marketing campaign, get it done."
+      icon="P"
     />
   </div>
 );
 
 const Work = () => (
-  <div className="bg-gray-900 text-white min-h-screen py-8">
+  <div className=" text-white min-h-screen py-8">
     <div className="container mx-auto">
       <Header />
       <ImageSection />
