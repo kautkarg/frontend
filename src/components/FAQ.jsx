@@ -40,7 +40,7 @@ const FAQHeader = () => {
   );
 };
 
-const FAQItem = ({ question, answer, isOpen, toggle, index }) => {
+const FAQItem = ({ question, answer, isOpen, toggle, index, searchTerm }) => {
   const faqRef = useRef(null);
 
   useEffect(() => {
@@ -81,6 +81,20 @@ const FAQItem = ({ question, answer, isOpen, toggle, index }) => {
     }
   };
 
+  const highlightSearchTerm = (text, term) => {
+    if (!term) return text;
+    const parts = text.split(new RegExp(`(${term})`, "gi"));
+    return parts.map((part, i) =>
+      part.toLowerCase() === term.toLowerCase() ? (
+        <span key={i} className="bg-yellow-300 text-gray-800">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <div
       ref={faqRef}
@@ -91,7 +105,7 @@ const FAQItem = ({ question, answer, isOpen, toggle, index }) => {
         className="flex justify-between items-center p-4 cursor-pointer"
       >
         <p className="text-gray-300 text-sm sm:text-base font-semibold">
-          {question}
+          {highlightSearchTerm(question, searchTerm)}
         </p>
         <div
           className="text-blue-400 font-bold text-lg"
@@ -103,7 +117,10 @@ const FAQItem = ({ question, answer, isOpen, toggle, index }) => {
           +
         </div>
       </div>
-      <div className="faq-content bg-gray-700 px-4 py-2 text-gray-400 text-sm sm:text-base" style={{ height: 0, overflow: "hidden", opacity: 0 }}>
+      <div
+        className="faq-content bg-gray-700 px-4 py-2 text-gray-400 text-sm sm:text-base"
+        style={{ height: 0, overflow: "hidden", opacity: 0 }}
+      >
         {answer}
       </div>
     </div>
@@ -176,6 +193,7 @@ const FAQSection = () => {
           isOpen={activeIndex === index}
           toggle={() => toggleFAQ(index)}
           index={index}
+          searchTerm={searchTerm}
         />
       ))}
 
