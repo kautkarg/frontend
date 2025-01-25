@@ -7,7 +7,7 @@ const Comparison = () => {
       {/* Section Header */}
       <div className="text-center">
         <p className="text-sm sm:text-base font-medium uppercase tracking-widest text-gray-400">
-          Why Choose Us
+          Why Choose Univen
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 mb-6">
           Univens vs Other Agencies

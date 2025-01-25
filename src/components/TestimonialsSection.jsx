@@ -3,35 +3,35 @@ import { gsap } from "gsap";
 
 const testimonials = [
   {
-    text: "Univens connected us with the right marketing experts at the perfect time. They made our growth seamless.",
-    name: "Gaurav Kautalkar",
+    text: "‘Univens connected us with the right marketing experts at the perfect time. They made our growth seamless.’",
+    name: "Raj",
     role: "Startup Founder",
     image: "/src/assets/gaurav.jpg",
     rating: 5,
   },
   {
-    text: "Working with Univens was a game changer for our business. Their team truly understood our needs.",
+    text: "‘We got exactly what you needed—no fuss, no delay. Univens just works.’",
+    name: "Priya",
+    role: "Scale-up Founder",
+    image: "https://via.placeholder.com/50",
+    rating: 5,
+  },
+  {
+    text: "‘Working with Univens was a game changer for our business. Their team truly understood our needs.’",
     name: "Emily",
     role: "Business Owner",
     image: "https://via.placeholder.com/50",
     rating: 5,
   },
   {
-    text: "The level of professionalism and expertise at Univens exceeded our expectations. Highly recommend!",
+    text: "‘The level of professionalism and expertise at Univens exceeded our expectations. Highly recommend!’",
     name: "James",
     role: "CEO",
     image: "https://via.placeholder.com/50",
     rating: 5,
   },
   {
-    text: "Our business soared to new heights thanks to Univens' strategic approach and brilliant execution.",
-    name: "Sophia",
-    role: "Marketing Director",
-    image: "https://via.placeholder.com/50",
-    rating: 5,
-  },
-  {
-    text: "Univens helped us streamline our processes, and the results speak for themselves.",
+    text: "‘Univens helped us streamline our processes, and the results speak for themselves.’",
     name: "Michael",
     role: "Operations Manager",
     image: "https://via.placeholder.com/50",
@@ -51,7 +51,6 @@ const TestimonialsSection = () => {
   }, []);
 
   useEffect(() => {
-    // GSAP sliding animation for transitioning testimonials
     const testimonial = testimonialRef.current;
     if (testimonial) {
       gsap.fromTo(
@@ -63,11 +62,13 @@ const TestimonialsSection = () => {
   }, [currentIndex]);
 
   return (
-    <section id="testimonials" className="py-12 h-screen text-center flex items-center ">
-      <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">What Our Clients Are Saying</h2>
-        <p className="mt-4 text-gray-400 text-sm md:text-base">
-          Discover what our clients say about their experiences and success working with us.
+    <section id="testimonials" className="py-12 h-screen flex items-center  ">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-500 mb-6">
+          What Our Clients Are Saying
+        </h2>
+        <p className="text-gray-400 text-sm md:text-base mb-10">
+          Discover the experiences and success stories of our clients working with Univens.
         </p>
 
         <div
