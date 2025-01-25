@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -7,53 +7,69 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PartnersSection from './components/PartnersSection';
 import TestimonialsSection from './components/TestimonialsSection';
-import Hero from "./components/Hero";
-import Cards from "./components/Cards";
-import Comparison from "./components/Comparison";
-import Work from "./components/Work";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
+import Hero from './components/Hero';
+import Cards from './components/Cards';
+import Comparison from './components/Comparison';
+import Work from './components/Work';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 function App() {
+  const ScrollRef = useRef(null);
+
+  const handleScroll = (e) => {
+    const { deltaY } = e;
+    if (deltaY > 0) {
+      gsap.to(ScrollRef.current, { y: -70, duration: 0.5 });
+    } else {
+      gsap.to(ScrollRef.current, { y: 0, duration: 0.5 });
+    }
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Initialize Lenis smooth scroll
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      duration: 0.7,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
     });
 
-    function raf(time) {
-      lenis.raf(time); 
-      requestAnimationFrame(raf); 
-    }
+    // RAF loop for smooth scrolling
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
     requestAnimationFrame(raf);
 
     lenis.on('scroll', ScrollTrigger.update);
 
+    // Event listener for mouse wheel
+    window.addEventListener('wheel', handleScroll);
+
+    // Cleanup on component unmount
     return () => {
+      window.removeEventListener('wheel', handleScroll);
       lenis.destroy();
     };
   }, []);
 
-
   return (
     <div className="scroll-container">
-      <div id='home'></div>
+      <div id="home"></div>
       <div data-scroll-container className="bg-gradient-to-b from-[#0a0a1a] to-black text-white font-sans min-h-screen flex flex-col">
-        <Header />
+        <Header ref={ScrollRef} />
         <div className="h-screen">
           <HeroSection />
           <PartnersSection />
         </div>
         <TestimonialsSection />
-        <Hero/>
+        <Hero />
         <Cards />
         <Comparison />
-        <Work/>
-        <FAQ/>
+        <Work />
+        <FAQ />
         <Footer />
       </div>
     </div>

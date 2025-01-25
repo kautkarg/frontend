@@ -1,11 +1,11 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
-import {React, useEffect, useRef} from 'react';
+import {React, useEffect, useRef, forwardRef } from 'react';
 import { Link } from 'react-scroll';
 
 
-const Header = () => {
+const Header = forwardRef((props, ref) => {
   const headerRef = useRef();
   const buttonRef = useRef();
   const navItemsRef =useRef([]);
@@ -29,14 +29,15 @@ const Header = () => {
       opacity:0,
       duration:1
     });
-
   })
+
+
 
   return (
     <div className="fixed w-screen z-20">
-    <header  className="flex flex-wrap justify-between items-center py-5 px-4 md:px-52">
+    <header className="flex flex-wrap justify-between items-center py-5 px-4 md:px-52">
       <h1 ref={headerRef} className="text-lg md:text-xl">Univens</h1>
-      <nav className="mt-4 md:mt-0">
+      <nav ref={ref} className="mt-4 md:mt-0">
         <ul className="flex flex-wrap gap-2 space-x-2 md:space-x-6 border-slate-500 rounded-full py-3 px-2 border overflow-hidden">
           {['home', 'testimonials', 'features', 'process', 'comparison', 'faq'].map((item, index) => (
             <li key={item} ref={(el) => (navItemsRef.current[index] = el)}>
@@ -61,6 +62,6 @@ const Header = () => {
     </header>
   </div>
   );
-};
+});
 
 export default Header;
