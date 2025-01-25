@@ -29,14 +29,12 @@ function App() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 0.7,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
     });
 
-    // RAF loop for smooth scrolling
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -45,10 +43,8 @@ function App() {
 
     lenis.on('scroll', ScrollTrigger.update);
 
-    // Event listener for mouse wheel
     window.addEventListener('wheel', handleScroll);
 
-    // Cleanup on component unmount
     return () => {
       window.removeEventListener('wheel', handleScroll);
       lenis.destroy();

@@ -10,6 +10,11 @@ const Header = forwardRef((props, ref) => {
   const buttonRef = useRef();
   const navItemsRef =useRef([]);
 
+  const updateButtonColor = (percentage) => {
+    const color = `rgb(${Math.min(255, percentage * 2)}, ${Math.max(0, 255 - percentage * 2)}, 0)`;
+    buttonRef.current.style.backgroundColor = color;
+  };
+
   useGSAP(()=>{
     gsap.from(headerRef.current,{
       scale:0,
@@ -30,8 +35,6 @@ const Header = forwardRef((props, ref) => {
       duration:1
     });
   })
-
-
 
   return (
     <div className="fixed w-screen z-20">
