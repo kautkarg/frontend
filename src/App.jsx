@@ -15,62 +15,33 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
-  const [scrollHeight, setScrollHeight] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => Math.min(1, 1 - Math.pow(2, -10 * t)),
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
       smooth: true,
     });
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); 
-    });
+    function raf(time) {
+      lenis.raf(time); 
+      requestAnimationFrame(raf); 
+    }
+    requestAnimationFrame(raf);
 
     lenis.on('scroll', ScrollTrigger.update);
 
-    const updateScrollPosition = () => {
-      const currentScrollPosition = lenis.scroll;
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollHeight(totalHeight);
-      setScrollPosition(currentScrollPosition);
-    };
-
-    lenis.on('scroll', updateScrollPosition);
-
-    const onScroll = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(onScroll);
-    };
-
-    requestAnimationFrame(onScroll);
-
     return () => {
       lenis.destroy();
-      gsap.ticker.remove();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
-  useEffect(() => {
-    if (scrollHeight > 0) {
-      const progress = (scrollPosition / scrollHeight) * 100;
-      gsap.to('.loader-bar', {
-        width: `${progress}%`,
-        duration: 0.1, 
-      });
-    }
-  }, [scrollPosition, scrollHeight]);
 
   return (
     <div className="scroll-container">
       <div id='home'></div>
-      <div className="loader-bar fixed top-0 left-0 w-0 h-1 bg-teal-500 z-50 transition-all duration-300 ease-in-out"></div>
-
       <div data-scroll-container className="bg-gradient-to-b from-[#0a0a1a] to-black text-white font-sans min-h-screen flex flex-col">
         <Header />
         <div className="h-screen">
