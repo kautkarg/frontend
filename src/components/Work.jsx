@@ -42,7 +42,7 @@ export default function WorkTogether() {
         {/* Image Section */}
         <div>
           <img
-            src="/src/assets/fv5yPBmjikTk2Jc47v6BFoFyxg.png.png" // Replace with actual image URL
+            src="https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Components/fv5yPBmjikTk2Jc47v6BFoFyxg.png.png" // Replace with actual image URL
             alt="Team working together"
             className="rounded-lg shadow-lg"
           />

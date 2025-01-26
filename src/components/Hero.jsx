@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <div
       id="features"
-      className="w-full max-w-[1260px] min-h-screen mx-auto flex flex-col items-center gap-12 px-6 py-20   bg-gradient-to-r text-white"
+      className="w-full max-w-[1260px] min-h-screen mx-auto flex flex-col items-center gap-12 px-6 py-20 bg-gradient-to-r text-white"
     >
       {/* Hero Heading Section */}
       <div className="text-center">
@@ -19,11 +19,11 @@ const Hero = () => {
 
       {/* Video Section */}
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-[720px] h-[220px] sm:h-[320px] md:h-[405px] relative rounded-lg overflow-hidden shadow-2xl group">
+        <div className="w-full max-w-[720px] sm:max-w-[960px] md:max-w-[1260px] h-[220px] sm:h-[320px] md:h-[405px] relative rounded-lg overflow-hidden shadow-2xl group">
           {/* Video Element */}
           <video
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
-            src="/src/assets/Proper Video.mp4" // Replace with your video link or Supabase URL
+            src=""
             controls
             autoPlay
             muted

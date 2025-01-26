@@ -6,41 +6,42 @@ const testimonials = [
     text: "‘Univens connected us with the right marketing experts at the perfect time. They made our growth seamless.’",
     name: "Raj",
     role: "Startup Founder",
-    image: "/src/assets/gaurav.jpg",
+    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/raj.jpg",
     rating: 5,
   },
   {
     text: "‘We got exactly what you needed—no fuss, no delay. Univens just works.’",
     name: "Priya",
     role: "Scale-up Founder",
-    image: "https://via.placeholder.com/50",
+    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/priya.jpg",
     rating: 5,
   },
   {
     text: "‘Working with Univens was a game changer for our business. Their team truly understood our needs.’",
     name: "Emily",
     role: "Business Owner",
-    image: "https://via.placeholder.com/50",
+    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/emily.jpg",
     rating: 5,
   },
   {
     text: "‘The level of professionalism and expertise at Univens exceeded our expectations. Highly recommend!’",
     name: "James",
     role: "CEO",
-    image: "https://via.placeholder.com/50",
+    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/james.jpg",
     rating: 5,
   },
   {
     text: "‘Univens helped us streamline our processes, and the results speak for themselves.’",
     name: "Michael",
     role: "Operations Manager",
-    image: "https://via.placeholder.com/50",
+    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/michele.jpg",
     rating: 4,
   },
 ];
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const testimonialRef = useRef(null);
 
   useEffect(() => {
@@ -53,16 +54,23 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const testimonial = testimonialRef.current;
     if (testimonial) {
-      gsap.fromTo(
-        testimonial,
-        { opacity: 0, x: 50 }, // Slide in from the right
-        { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
-      );
+      gsap.to(testimonial, {
+        opacity: 0, // Fade out the current testimonial
+        duration: 0.5, // Fade-out duration
+        onComplete: () => {
+          gsap.to(testimonial, {
+            opacity: 1, // Fade in the new testimonial
+            duration: 1, // Fade-in duration
+            ease: "power3.out",
+          });
+        },
+      });
     }
+    setIsLoading(false);
   }, [currentIndex]);
 
   return (
-    <section id="testimonials" className="py-12 h-screen flex items-center  ">
+    <section id="testimonials" className="py-12 h-screen flex items-center bg-gradient-to-b">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-500 mb-6">
           What Our Clients Are Saying
@@ -71,9 +79,16 @@ const TestimonialsSection = () => {
           Discover the experiences and success stories of our clients working with Univens.
         </p>
 
+        {/* Loading Spinner */}
+        {isLoading && (
+          <div className="flex justify-center items-center mb-6">
+            <div className="w-12 h-12 border-4 border-t-4 border-blue-400 border-solid rounded-full animate-spin"></div>
+          </div>
+        )}
+
         <div
           ref={testimonialRef}
-          className="mt-10 mx-auto bg-gradient-to-b from-[#0a0a1a] to-[#1a1a2e] p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer"
+          className="mt-10 mx-auto p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer bg-[url('https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Components/Component%201%20(1).png')] bg-cover bg-center"
         >
           <p className="text-lg md:text-xl italic mb-6 text-white">
             &ldquo;{testimonials[currentIndex].text}&rdquo;
@@ -96,17 +111,6 @@ const TestimonialsSection = () => {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="mt-8 flex justify-center space-x-3">
-          {testimonials.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer ${index === currentIndex ? "bg-blue-500" : "bg-gray-500"} transition-colors duration-300`}
-            ></div>
-          ))}
         </div>
       </div>
     </section>

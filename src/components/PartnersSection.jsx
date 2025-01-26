@@ -6,12 +6,23 @@ const PartnersSection = () => {
       </h2>
       <div className="flex flex-wrap justify-center items-center overflow-hidden">
         <div className="flex animate-marquee space-x-8">
-          {['', 'disney.png', 'pocketfm.png', 'kukufm.png', 'bigfm.png', 'nickelodeon.png', 'disney.png', 'pocketfm.png', 'kukufm.png', 'bigfm.png'].map((logo, index) => (
+          {[
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/nickl.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/disney.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/pocket-fm-seeklogo%201.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/kukufm.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/bigfm.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/nickl.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/disney.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/pocket-fm-seeklogo%201.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/kukufm.png',
+            'https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/company%20logos/bigfm.png'
+          ].map((logo, index) => (
             <img
               key={index}
-              src={`./assets/logos/${logo}`} // Assuming logos are placed in the 'assets/logos' folder
+              src={logo} // Directly use the Supabase URL
               alt="Partner Logo"
-              className="m-4 h-12 opacity-80 hover:opacity-100"
+              className="m-4 h-4 opacity-80 hover:opacity-100" // Updated to h-8 for smaller size
             />
           ))}
         </div>
