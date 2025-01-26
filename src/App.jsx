@@ -56,10 +56,8 @@ function App() {
       <div id="home"></div>
       <div data-scroll-container className="bg-gradient-to-b from-[#0a0a1a] to-black text-white font-sans min-h-screen flex flex-col">
         <Header ref={ScrollRef} />
-        <div className="h-screen">
-          <HeroSection />
-          <PartnersSection />
-        </div>
+        <HeroSection />
+        <PartnersSection />
         <TestimonialsSection />
         <Hero />
         <Cards />
