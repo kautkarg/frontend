@@ -92,7 +92,7 @@ const Slider = () => {
 
   const handleNext = () => {
     gsap.to(`.card-${index}`, {
-      top: "-100%",
+      top: "-130%",
       scale: 0,
       duration: 0.5,
     });
@@ -113,7 +113,7 @@ const Slider = () => {
         {cards.map((card, cardIndex) => (
           <div
             key={cardIndex}
-            className={`card-${cardIndex} scale-[0.85] absolute top-[-100%] left-1/2 -translate-x-1/2 min-w-96 max-w-xl w-full h-full flex justify-center items-start`}
+            className={`card-${cardIndex} scale-[0.85] absolute top-[-130%] left-1/2 -translate-x-1/2 min-w-96 max-w-xl w-full h-full flex justify-center items-start`}
           >
             <div className="bg-[#0a0a1a] text-white p-6 rounded-lg w-full max-w-2xl">
               <p className="text-sm font-semibold mb-2">{card.title}</p>
