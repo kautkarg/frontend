@@ -81,7 +81,9 @@ const Slider = () => {
   ];
 
   useGSAP(()=>{
+    gsap.set(".card-0",{ scale:0.85, top:"100%" })
     gsap.to(".card-0",{
+      delay:0.75,
       scale:.85,
       top:"0",
       duration:0.5
