@@ -1,13 +1,23 @@
 
 const PartnersSection = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center relative bottom-[-15%] py-10 px-4">
-    {['Nickelodeon', 'Disney', 'Pocket FM', 'Kuku FM', 'BIG FM'].map((partner, index) => (
+    <div className="flex justify-center items-center relative bottom-[-15%] py-10  w-fit mx-auto">
+    {['Nickelodeon_2023_logo.svg', 'disney.svg', 'pocket-fm-seeklogo.svg', 'kuku-fm-svgrepo-com.svg', 'bigfm.png'].map((partner, index) => (
       <img
         key={index}
-        src={`https://via.placeholder.com/100x50?text=${partner}`}
+        src={`/logo/${partner}`}
         alt={partner}
-        className="m-4 h-10 md:h-12 opacity-80 hover:opacity-100"
+        className="flex h-10 mx-5 md:h-12 opacity-80 hover:opacity-100"
+        style={(index!==4)?{
+          width:"15%",
+          aspectRatio:3/2,
+          objectFit:"contain",
+          filter:"invert(1)"
+        }:{
+          width:"15%",
+          aspectRatio:3/2,
+          objectFit:"contain"
+        }}
       />
     ))}
   </div>
