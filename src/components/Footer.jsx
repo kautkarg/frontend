@@ -56,7 +56,7 @@ const App = () => {
         </div>
         <a
           href="#"
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-transform transform hover:scale-105"
+          className="px-6 py-3 bg-[#295AAD] block w-fit mx-auto text-white font-semibold rounded-full hover:bg-blue-600 transition-transform transform hover:scale-105"
         >
           Schedule Your Free Consultation
         </a>
@@ -75,7 +75,7 @@ const App = () => {
             </p>
             <a
               href="#"
-              className="px-4 py-2 ml-5 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-transform transform hover:scale-105"
+              className="px-4 py-2 ml-5 bg-[#295AAD] block w-fit text-white rounded-full hover:bg-blue-600 transition-transform transform hover:scale-105"
             >
               Contact Us →
             </a>
@@ -190,7 +190,7 @@ const App = () => {
         {/* Back to Top Button */}
         {showScroll && (
           <motion.button
-            className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-500"
+            className="fixed bottom-8 right-8 bg-[#295AAD] text-white p-3 rounded-full shadow-lg hover:bg-blue-500"
             onClick={scrollToTop}
             whileHover={{ scale: 1.2 }}
           >

@@ -221,7 +221,7 @@ const FAQFooter = () => {
       <p className="text-gray-400 text-base mb-6">
         Still have a question?
       </p>
-      <button className="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300">
+      <button className="bg-[#295AAD] text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300">
         Ask a Question
       </button>
     </div>

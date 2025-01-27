@@ -8,6 +8,7 @@ import { Link } from 'react-scroll';
 const Header = forwardRef((props, ref) => {
   const headerRef = useRef();
   const buttonRef = useRef();
+  const animationRef = useRef(null);
   const navItemsRef =useRef([]);
 
   const updateButtonColor = (percentage) => {
@@ -48,7 +49,7 @@ const Header = forwardRef((props, ref) => {
                 to={item}
                 smooth={true}
                 duration={500}
-                className="flex justify-center items-center px-5 py-3 text-white font-bold text-center"
+                className="flex justify-center items-center px-5 py-3 text-white font-bold text-center cursor-pointer hover:scale-75"
                 style={{
                   transform: "skew(-20deg)",
                   borderRadius: "1px",
@@ -64,7 +65,7 @@ const Header = forwardRef((props, ref) => {
       </nav>
       <button
         ref={buttonRef}
-        className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600"
+        className="bg-[#295AAD] text-white py-2 px-4 rounded-sm"
       >
         Contact Us
       </button>

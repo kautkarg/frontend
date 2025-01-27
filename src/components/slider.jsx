@@ -11,19 +11,19 @@ const Slider = () => {
       content: (
         <ul className="space-y-3">
           <li className=" bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-            <span className="mr-3 bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center">1</span>
+            <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">1</span>
             IT Services (Web/App Development, Maintenance, etc.)
           </li>
           <li className="bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-            <span className="mr-3 bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center">2</span>
+            <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">2</span>
             Marketing Services (Content Creation, Ads, Social Media, etc.)
           </li>
           <li className="bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-            <span className="mr-3 bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center">3</span>
+            <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">3</span>
             HR Solutions (Hiring, Payroll, Compliance, etc.)
           </li>
           <li className="bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-            <span className="mr-3 bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center">4</span>
+            <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">4</span>
             Other Services
           </li>
         </ul>
@@ -51,7 +51,7 @@ const Slider = () => {
         <ul className="space-y-3">
           {['Email', 'Phone Call', 'Video Call', 'WhatsApp', 'Slack'].map((channel, idx) => (
             <li key={idx} className="bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-              <span className="mr-3 bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center">
+              <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">
                 {idx + 1}
               </span>
               {channel}
@@ -113,15 +113,15 @@ const Slider = () => {
         {cards.map((card, cardIndex) => (
           <div
             key={cardIndex}
-            className={`card-${cardIndex} scale-[0.85] absolute top-[-130%] left-1/2 -translate-x-1/2 min-w-96 max-w-xl w-full h-full flex justify-center items-start`}
+            className={`card-${cardIndex} scale-[0.85] absolute top-[-130%] left-1/2 -translate-x-1/2 min-w-96 max-w-xl w-full h-full flex justify-center items-start `}
           >
-            <div className=" text-white p-6 rounded-lg w-full max-w-2xl">
+            <div className=" text-white p-6 rounded-lg w-full max-w-2xl bg-black">
               <p className="text-sm font-semibold mb-2">{card.title}</p>
               <p className="text-sm text-gray-400 mb-4">{card.description}</p>
               {card.content}
               <button
                 onClick={handleNext}
-                className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 mx-auto block"
+                className="mt-6 bg-[#295AAD] text-white px-6 py-2 rounded-sm hover:bg-[#295AAD] mx-auto block"
               >
                { cardIndex === 4 ? "Submit" : "Next" }
               </button>
