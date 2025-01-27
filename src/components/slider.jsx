@@ -85,23 +85,47 @@ const Slider = () => {
     gsap.to(".card-0",{
       delay:0.75,
       scale:.85,
-      top:"0",
-      duration:0.5
+      top:"-6%",
+      duration:1,
+      ease:"power2.inOut"
     })
   })
 
-  const handleNext = () => {
+  const handlePrev = ()=>{
+    if(index-1===-1) return index;
     gsap.to(`.card-${index}`, {
       top: "-130%",
       scale: 0,
-      duration: 0.5,
+      duration: 0.8,
+      ease:"power2.inOut"
+    });
+    
+    setIndex((prevIndex) => {
+      let newIndex = (prevIndex - 1);
+        gsap.to(`.card-${newIndex}`, {
+          top: "-6%",
+          scale: 0.85,
+          duration: 0.8,
+          ease:"power2.inOut"
+        });
+      return newIndex;
+    });
+  }
+
+  const handleNext = ()=>{
+    gsap.to(`.card-${index}`, {
+      top: "-130%",
+      scale: 0,
+      duration: 0.8,
+      ease:"power2.inOut"
     });
     setIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % cards.length;
       gsap.to(`.card-${newIndex}`, {
-        top: "0",
+        top: "-6%",
         scale: 0.85,
-        duration: 0.5,
+        duration: 0.8,
+        ease:"power2.inOut"
       });
       return newIndex;
     });
@@ -117,14 +141,21 @@ const Slider = () => {
           >
             <div className=" text-white p-6 rounded-lg w-full max-w-2xl bg-black">
               <p className="text-sm font-semibold mb-2">{card.title}</p>
-              <p className="text-sm text-gray-400 mb-4">{card.description}</p>
+              <p className="text-sm text-gray-400 mb-5">{card.description}</p>
               {card.content}
-              <button
-                onClick={handleNext}
-                className="mt-6 bg-[#295AAD] text-white px-6 py-2 rounded-sm hover:bg-[#295AAD] mx-auto block"
-              >
-               { cardIndex === 4 ? "Submit" : "Next" }
-              </button>
+              <div className='flex gap-5'>
+                <button
+                  onClick={handleNext}
+                  className={`${(cardIndex!==4) && "mt-6"} bg-[#295AAD] text-white px-6 py-2 rounded-sm hover:bg-[#295AAD]`}
+                >
+                { cardIndex === 4 ? "Submit" : "Next" }
+                </button>
+                <button
+                  onClick={handlePrev}
+                  className={`${(cardIndex!==4) && "mt-6"} bg-${(cardIndex===0)?"[#2959ad6a]":"[#295AAD]"} text-white px-6 py-2 rounded-sm ${(cardIndex!==0) && "hover:bg-[#295AAD]"}`}>
+                  { (cardIndex===0) ? <s> Previous </s> : "Previous" }
+                </button>
+              </div>
             </div>
           </div>
         ))}

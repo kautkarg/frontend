@@ -40,7 +40,7 @@ const PartnersSection = () => {
   }, [logos]);
 
   return (
-    <div className="relative w-1/2 overflow-hidden py-10 mx-auto">
+    <div className="relative w-full  md:w-1/2 overflow-hidden py-10 mx-auto">
       <div
         ref={containerRef}
         className="flex justify-center items-center whitespace-nowrap"
