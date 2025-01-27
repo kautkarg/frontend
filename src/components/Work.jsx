@@ -29,7 +29,11 @@ export default function WorkTogether() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="bg-[#0F172A] text-white py-16 px-4 md:px-16">
+=======
+    <div ref={sectionRef} className="bg-[#010102] text-white py-16 px-4 md:px-16">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
       <div className="text-center fade-in">
         <p className="text-lg font-semibold text-blue-400">Business Models to Connect Over</p>
         <h2 className="text-4xl font-bold mt-4">How We Work Together</h2>
@@ -44,13 +48,21 @@ export default function WorkTogether() {
           <img
             src="https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Components/fv5yPBmjikTk2Jc47v6BFoFyxg.png.png" // Replace with actual image URL
             alt="Team working together"
+<<<<<<< HEAD
             className="rounded-lg shadow-lg"
+=======
+            className="rounded-lg shadow-lg opacity-[78%]"
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
           />
         </div>
 
         {/* Content Section */}
         <div className="space-y-6">
+<<<<<<< HEAD
           <div className="p-6 bg-[#1E293B] rounded-lg shadow-lg fade-in">
+=======
+          <div className="p-6 bg-gray-950 rounded-lg shadow-lg fade-in">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             <div className="flex items-center space-x-4">
               <div className="bg-blue-500 p-3 rounded-full">
                 <svg
@@ -75,7 +87,11 @@ export default function WorkTogether() {
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="p-6 bg-[#1E293B] rounded-lg shadow-lg fade-in">
+=======
+          <div className="p-6 bg-gray-950 rounded-lg shadow-lg fade-in">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             <div className="flex items-center space-x-4">
               <div className="bg-blue-500 p-3 rounded-full">
                 <svg
@@ -103,5 +119,9 @@ export default function WorkTogether() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c

@@ -22,8 +22,13 @@ const Cards = () => {
       {/* Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Card 1 */}
+<<<<<<< HEAD
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+=======
+        <div className="flex flex-col items-center text-center p-8 bg-gray-950 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
+          <div className="flex items-center justify-center w-16 h-16 bg-gray-900 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             📋
           </div>
           <h3 className="text-xl font-semibold mb-4 text-white opacity-100 group-hover:opacity-90 transition-opacity duration-300">
@@ -35,8 +40,13 @@ const Cards = () => {
         </div>
 
         {/* Card 2 */}
+<<<<<<< HEAD
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+=======
+        <div className="flex flex-col items-center text-center p-8 bg-gray-950 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
+          <div className="flex items-center justify-center w-16 h-16 bg-gray-900 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             🤝
           </div>
           <h3 className="text-xl font-semibold mb-4 text-white opacity-100 group-hover:opacity-90 transition-opacity duration-300">
@@ -48,8 +58,13 @@ const Cards = () => {
         </div>
 
         {/* Card 3 */}
+<<<<<<< HEAD
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+=======
+        <div className="flex flex-col items-center text-center p-8 bg-gray-950 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-2 hover:translate-y-2 group">
+          <div className="flex items-center justify-center w-16 h-16 bg-gray-900 text-3xl rounded-full mb-6 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             ⭐
           </div>
           <h3 className="text-xl font-semibold mb-4 text-white opacity-100 group-hover:opacity-90 transition-opacity duration-300">

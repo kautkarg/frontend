@@ -2,9 +2,8 @@ const Hero = () => {
   return (
     <div
       id="features"
-      className="w-full max-w-[1260px] min-h-screen mx-auto flex flex-col items-center gap-12 px-6 py-20 bg-gradient-to-r text-white"
+      className="w-full max-w-[1260px] min-h-screen mx-auto flex flex-col items-center gap-12 px-6 py-20 bg-[#010102] text-white"
     >
-      {/* Hero Heading Section */}
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight transition-transform transform hover:scale-105 hover:text-blue-200">
           Struggling to Find the Right Solutions for Your Business?
@@ -17,22 +16,25 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* Video Section */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[720px] sm:max-w-[960px] md:max-w-[1260px] h-[220px] sm:h-[320px] md:h-[405px] relative rounded-lg overflow-hidden shadow-2xl group">
+<<<<<<< HEAD
           {/* Video Element */}
           <video
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
             src=""
             controls
+=======
+          <video
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
+            src="/video.mp4"
+>>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             autoPlay
             muted
             loop
             playsInline
-            poster="your-thumbnail-image.jpg"
             aria-label="Introduction video about Univen services"
           />
-          {/* Video Overlay for Aesthetic */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30 group-hover:opacity-10 transition-opacity duration-500"></div>
         </div>
       </div>
