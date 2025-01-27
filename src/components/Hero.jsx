@@ -22,14 +22,11 @@ const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
             src="/video.mp4"
             autoPlay
-            controls
             muted
             loop
             playsInline
-            poster="your-thumbnail-image.jpg"
             aria-label="Introduction video about Univen services"
           />
-          {/* Video Overlay for Aesthetic */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30 group-hover:opacity-10 transition-opacity duration-500"></div>
         </div>
       </div>

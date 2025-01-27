@@ -1,7 +1,7 @@
 
 const PartnersSection = () => {
   return (
-    <div className="flex justify-center items-center relative bottom-[-15%] py-10  w-fit mx-auto">
+    <div className="flex justify-center items-center relative bottom-[-15%] py-10 px-10 w-fit mx-auto">
     {['Nickelodeon_2023_logo.svg', 'disney.svg', 'pocket-fm-seeklogo.svg', 'kuku-fm-svgrepo-com.svg', 'bigfm.png'].map((partner, index) => (
       <img
         key={index}
