@@ -1,27 +1,68 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 
 const PartnersSection = () => {
-  return (
-    <div className="flex justify-center items-center relative bottom-[-15%] py-10 px-10 w-fit mx-auto">
-    {['Nickelodeon_2023_logo.svg', 'disney.svg', 'pocket-fm-seeklogo.svg', 'kuku-fm-svgrepo-com.svg', 'bigfm.png'].map((partner, index) => (
-      <img
-        key={index}
-        src={`/logo/${partner}`}
-        alt={partner}
-        className="flex h-10 mx-5 md:h-12 opacity-80 hover:opacity-100"
-        style={(index!==4)?{
-          width:"15%",
-          aspectRatio:3/2,
-          objectFit:"contain",
-          filter:"invert(1)"
-        }:{
-          width:"15%",
-          aspectRatio:3/2,
-          objectFit:"contain"
-        }}
-      />
-    ))}
-  </div>
-  )
-}
+  const containerRef = useRef(null);
+  const logoRefs = useRef([]);
+  const logos = [
+    "Nickelodeon_2023_logo.svg",
+    "disney.svg",
+    "pocket-fm-seeklogo.svg",
+    "kuku-fm-svgrepo-com.svg",
+    "bigfm.png",
+  ];
 
-export default PartnersSection
+  const handleRef = (ref) => {
+    if (ref && !logoRefs.current.includes(ref)) {
+      logoRefs.current.push(ref);
+    }
+  };
+
+  useGSAP(() => {
+    if (logoRefs.current.length && containerRef.current) {
+      const totalWidth = logoRefs.current.reduce(
+        (acc, logo) => acc + logo.offsetWidth + 2, 
+        0
+      );
+
+      const wrapper = containerRef.current;
+      wrapper.style.width = `${totalWidth * 2}px`;
+
+      return gsap.to(wrapper, {
+        x: -totalWidth,
+        duration: 10, 
+        ease: "linear",
+        repeat: -1, 
+      });
+    }
+  }, [logos]);
+
+  return (
+    <div className="relative w-1/2 overflow-hidden py-10 mx-auto">
+      <div
+        ref={containerRef}
+        className="flex justify-center items-center whitespace-nowrap"
+      >
+        {[...logos, ...logos].map((logo, index) => (
+          <img
+            key={index}
+            ref={handleRef}
+            src={`/logo/${logo}`}
+            alt={logo}
+            className="h-10 mx-5 md:h-12 opacity-80 hover:opacity-100 cursor-pointer"
+            style={{
+              width: "10%",
+              aspectRatio: "3 / 2",
+              objectFit: "contain",
+              ...(index % 5 !== 4 && { filter: "invert(1)" }),
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default PartnersSection;

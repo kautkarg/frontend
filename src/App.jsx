@@ -62,7 +62,7 @@ function App() {
           <HeroSection />
       </div>
         <PartnersSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <Hero />
         <Cards />
         <Comparison />
