@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
 
         <div
           ref={testimonialRef}
-          className="mt-10 mx-auto bg-gradient-to-b from-[#0a0a1a] to-[#1a1a2e] p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer"
+          className="mt-10 mx-auto bg-gray-950 border border-gray-50 p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer"
         >
           <p className="text-lg md:text-xl italic mb-6 text-white">
             &ldquo;{testimonials[currentIndex].text}&rdquo;
