@@ -6,11 +6,7 @@ const testimonials = [
     text: "‘Univens connected us with the right marketing experts at the perfect time. They made our growth seamless.’",
     name: "Raj",
     role: "Startup Founder",
-<<<<<<< HEAD
     image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/raj.jpg",
-=======
-    image: "raj.jpg",
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
     rating: 5,
   },
   {
@@ -24,18 +20,13 @@ const testimonials = [
     text: "‘Working with Univens was a game changer for our business. Their team truly understood our needs.’",
     name: "Emily",
     role: "Business Owner",
-<<<<<<< HEAD
     image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/emily.jpg",
-=======
-    image: "emily.jpg",
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
     rating: 5,
   },
   {
     text: "‘The level of professionalism and expertise at Univens exceeded our expectations. Highly recommend!’",
     name: "James",
     role: "CEO",
-<<<<<<< HEAD
     image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/james.jpg",
     rating: 5,
   },
@@ -44,23 +35,6 @@ const testimonials = [
     name: "Michael",
     role: "Operations Manager",
     image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/michele.jpg",
-=======
-    image: "james.jpg",
-    rating: 5,
-  },
-  {
-    text: "Our business soared to new heights thanks to Univens' strategic approach and brilliant execution.",
-    name: "Sophia",
-    role: "Marketing Director",
-    image: "priya.jpg",
-    rating: 5,
-  },
-  {
-    text: "Univens helped us streamline our processes, and the results speak for themselves.",
-    name: "Michael",
-    role: "Operations Manager",
-    image: "michele.jpg",
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
     rating: 4,
   },
 ];
@@ -80,7 +54,6 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const testimonial = testimonialRef.current;
     if (testimonial) {
-<<<<<<< HEAD
       gsap.to(testimonial, {
         opacity: 0, // Fade out the current testimonial
         duration: 0.5, // Fade-out duration
@@ -92,13 +65,6 @@ const TestimonialsSection = () => {
           });
         },
       });
-=======
-      gsap.fromTo(
-        testimonial,
-        { opacity: 0, x: 50 }, 
-        { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
-      );
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
     }
     setIsLoading(false);
   }, [currentIndex]);
@@ -122,11 +88,7 @@ const TestimonialsSection = () => {
 
         <div
           ref={testimonialRef}
-<<<<<<< HEAD
           className="mt-10 mx-auto p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer bg-[url('https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Components/Component%201%20(1).png')] bg-cover bg-center"
-=======
-          className="mt-10 mx-auto bg-gray-950 border border-gray-50 p-6 md:p-10 rounded-lg max-w-lg md:max-w-2xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer"
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
         >
           <p className="text-lg md:text-xl italic mb-6 text-white">
             &ldquo;{testimonials[currentIndex].text}&rdquo;
@@ -150,19 +112,6 @@ const TestimonialsSection = () => {
             ))}
           </div>
         </div>
-<<<<<<< HEAD
-=======
-
-        <div className="mt-8 flex justify-center space-x-3">
-          {testimonials.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer ${index === currentIndex ? "bg-blue-500" : "bg-gray-500"} transition-colors duration-300`}
-            ></div>
-          ))}
-        </div>
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
       </div>
     </section>
   );

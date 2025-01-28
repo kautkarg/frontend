@@ -44,11 +44,7 @@ const Header = forwardRef((props, ref) => {
       <nav ref={ref} className="hidden md:flex md:justify-center md:items-center">
         <ul className="flex flex-wrap gap-1">
           {['home', 'testimonials', 'features', 'process', 'comparison', 'faq'].map((item, index) => (
-<<<<<<< HEAD
             <li key={item} ref={(el) => (navItemsRef.current[index] = el)}>
-=======
-            <li key={item} ref={(el) => (navItemsRef.current[index] = el)} className="flex justify-center items-center">
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
               <Link
                 to={item}
                 smooth={true}

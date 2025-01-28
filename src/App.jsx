@@ -46,7 +46,6 @@ function App() {
     window.addEventListener('wheel', handleScroll);
 
     return () => {
-      window.removeEventListener('wheel', handleScroll);
       lenis.destroy();
     };
   }, []);
@@ -56,13 +55,13 @@ function App() {
       <div id="home"></div>
       <div data-scroll-container className="bg-[#010102] text-white font-sans min-h-screen flex flex-col">
       <div className='BG w-full overflow-hidden relative'>
-          <div class="glow-quarter"></div>
-          <div class="glow-inner"></div>
+          <div className="glow-quarter"></div>
+          <div className="glow-inner"></div>
           <Header ref={ScrollRef} />
           <HeroSection />
-      </div>
+        </div>
         <PartnersSection />
-        {/* <TestimonialsSection /> */}
+        <TestimonialsSection />
         <Hero />
         <Cards />
         <Comparison />

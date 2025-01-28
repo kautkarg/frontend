@@ -93,13 +93,8 @@ const FAQItem = ({ question, answer, isOpen, toggle, index, searchTerm }) => {
   };
 
   return (
-<<<<<<< HEAD
-    <div ref={faqRef} className="bg-gray-800 rounded-lg mb-4 overflow-hidden shadow-lg transition-all duration-300">
-      <div onClick={handleToggle} className="flex justify-between items-center p-5 cursor-pointer hover:bg-gray-700 transition-colors duration-200">
-=======
     <div ref={faqRef} className="rounded-lg mb-4 overflow-hidden shadow-lg transition-all duration-300">
       <div onClick={handleToggle} className="flex justify-between items-center p-5 cursor-pointer bg-gray-950 hover:bg-gray-900 transition-colors duration-200">
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
         <p className="text-gray-300 text-lg font-medium">
           {highlightSearchTerm(question, searchTerm)}
         </p>
@@ -174,11 +169,7 @@ const FAQSection = () => {
         <input
           type="text"
           placeholder="Search FAQs..."
-<<<<<<< HEAD
-          className="w-full bg-gray-700 text-gray-300 rounded-lg px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
-=======
           className="w-full bg-gray-900 text-gray-300 rounded-lg px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -230,11 +221,7 @@ const FAQFooter = () => {
       <p className="text-gray-400 text-base mb-6">
         Still have a question?
       </p>
-<<<<<<< HEAD
-      <button className="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300">
-=======
       <button className="bg-[#295AAD] text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300">
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
         Ask a Question
       </button>
     </div>
@@ -242,11 +229,7 @@ const FAQFooter = () => {
 };
 
 const FAQ = () => (
-<<<<<<< HEAD
-  <div id="faq" className="text-white min-h-screen py-16 bg-gray-900">
-=======
   <div id="faq" className="text-white min-h-screen py-16 bg-[#010102]">
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
     <div className="container mx-auto">
       <FAQHeader />
       <FAQSection />

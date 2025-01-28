@@ -140,7 +140,7 @@ const App = () => {
 
           {/* Right Section */}
           <div className="ml-5">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4">Home</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:underline">

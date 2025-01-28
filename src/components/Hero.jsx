@@ -18,17 +18,9 @@ const Hero = () => {
 
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[720px] sm:max-w-[960px] md:max-w-[1260px] h-[220px] sm:h-[320px] md:h-[405px] relative rounded-lg overflow-hidden shadow-2xl group">
-<<<<<<< HEAD
-          {/* Video Element */}
-          <video
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
-            src=""
-            controls
-=======
           <video
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-in-out"
             src="/video.mp4"
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
             autoPlay
             muted
             loop

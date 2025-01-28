@@ -133,8 +133,4 @@ const Slider = () => {
   );
 };
 
-<<<<<<< HEAD
-export default slider
-=======
 export default Slider;
->>>>>>> a0514e63f6cd3b2709c3cd3ac1f445419a4ba00c
