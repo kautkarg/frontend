@@ -72,9 +72,9 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-12 h-screen flex items-center bg-gradient-to-b">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-500 mb-6">
+        <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
           What Our Clients Are Saying
-        </h2>
+        </h5>
         <p className="text-gray-400 text-sm md:text-base mb-10">
           Discover the experiences and success stories of our clients working with Univens.
         </p>
