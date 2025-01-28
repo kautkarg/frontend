@@ -1,4 +1,3 @@
-import React from 'react';
 import Typewriter from 'typewriter-effect';
 import Slider from "./Slider";
 
@@ -33,7 +32,7 @@ const HeroSection = () => {
       <p className="mt-4 text-gray-400 text-base md:text-lg z-[10000]" >Business simplified</p>
     </div>
     <Slider/>
-    </> 
+    </>
   );
 };
 

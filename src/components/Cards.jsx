@@ -1,4 +1,3 @@
-import React from 'react';
 import { Assignment, Handshake, Star } from '@mui/icons-material';
 
 const Cards = () => {
