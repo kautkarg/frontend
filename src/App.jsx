@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Suspense, lazy } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -7,12 +7,14 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PartnersSection from './components/PartnersSection';
 import TestimonialsSection from './components/TestimonialsSection';
-import Hero from './components/Hero';
 import Cards from './components/Cards';
 import Comparison from './components/Comparison';
 import Work from './components/Work';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import AnimatedLoader from './components/AnimatedLoader';
+
+const Hero = lazy(() => import('./components/Hero'));
 
 function App() {
   const ScrollRef = useRef(null);
@@ -55,15 +57,16 @@ function App() {
     <div className="scroll-container">
       <div id="home"></div>
       <div data-scroll-container className="bg-[#010102] text-white font-sans min-h-screen flex flex-col">
-      <div className='BG w-full overflow-hidden relative'>
-          <div class="glow-quarter"></div>
-          <div class="glow-inner"></div>
+        <div className="BG w-full overflow-hidden relative">
+          <div className="glow-quarter"></div>
+          <div className="glow-inner"></div>
           <Header ref={ScrollRef} />
           <HeroSection />
-      </div>
+        </div>
         <PartnersSection />
-        {/* <TestimonialsSection /> */}
-        <Hero />
+        <Suspense fallback={<AnimatedLoader />}>
+          <Hero />
+        </Suspense>
         <Cards />
         <Comparison />
         <Work />
