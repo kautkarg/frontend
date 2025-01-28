@@ -5,8 +5,10 @@ import App from './App.jsx'
 import ProgressBar from './components/ProgressBar.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>  
+  <>
+  {/* <StrictMode>   */}
     <ProgressBar/>
     <App />
-  </StrictMode>,
+  {/* </StrictMode>, */}
+  </>
 )
