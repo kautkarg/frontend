@@ -57,26 +57,17 @@ function App() {
     <div className="scroll-container">
       <div id="home"></div>
       <div data-scroll-container className="bg-[#010102] text-white font-sans min-h-screen flex flex-col">
-<<<<<<< HEAD
-      <div className='BG w-full overflow-hidden relative'>
-=======
         <div className="BG w-full overflow-hidden relative">
->>>>>>> 789c831c8445a2826653737bed4597509ebcbbc9
           <div className="glow-quarter"></div>
           <div className="glow-inner"></div>
           <Header ref={ScrollRef} />
           <HeroSection />
         </div>
         <PartnersSection />
-<<<<<<< HEAD
-        <TestimonialsSection />
-        <Hero />
-=======
         <TestimonialsSection/>
         <Suspense fallback={<AnimatedLoader />}>
           <Hero />
         </Suspense>
->>>>>>> 789c831c8445a2826653737bed4597509ebcbbc9
         <Cards />
         <Comparison />
         <Work />
