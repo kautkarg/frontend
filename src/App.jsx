@@ -13,6 +13,7 @@ import Work from './components/Work';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import AnimatedLoader from './components/AnimatedLoader';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Hero = lazy(() => import('./components/Hero'));
 
@@ -64,6 +65,7 @@ function App() {
           <HeroSection />
         </div>
         <PartnersSection />
+        <TestimonialsSection/>
         <Suspense fallback={<AnimatedLoader />}>
           <Hero />
         </Suspense>

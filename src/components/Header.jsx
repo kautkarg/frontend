@@ -53,8 +53,7 @@ const Header = forwardRef((props, ref) => {
                 style={{
                   transform: "skew(-20deg)",
                   borderRadius: "1px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-                  border: "1px solid #3d3d3d",
+                  boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
                 }}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}

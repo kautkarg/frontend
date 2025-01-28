@@ -22,7 +22,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen text-white font-sans">
+    <div className="flex flex-col min-h-screen text-white font-sans h-screen w-screen">
       <section className="text-center py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-400">
           Ready to Solve Your Business Challenges?
