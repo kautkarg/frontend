@@ -54,35 +54,20 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const testimonial = testimonialRef.current;
     if (testimonial) {
-<<<<<<< HEAD
-      // GSAP animation for more dynamic sliding effect with flowing motion
-      gsap.fromTo(
-        testimonial,
-        {
-          x: "100%", // Start offscreen to the right
-          opacity: 0, // Start with zero opacity
-          scale: 0.8, // Start slightly smaller for a subtle zoom-in effect
-=======
       gsap.to(testimonial, {
-        opacity: 0, 
+        opacity: 0,
         duration: 0.5,
         onComplete: () => {
           gsap.to(testimonial, {
-            opacity: 1, 
-            duration: 1,
+            opacity: 1,
+            x: "0%",
+            scale: 1,
+            duration: 1.5,
             ease: "power3.out",
+            stagger: 0.2,
           });
->>>>>>> 43a431dbe27eb73be9613c353169b81dd67ce2ec
         },
-        {
-          x: "0%", // Move to the center
-          opacity: 1, // Fade in the testimonial
-          scale: 1, // End at normal size
-          duration: 1.5, // Longer duration for a smooth effect
-          ease: "power3.out", // Ease for a flowing movement
-          stagger: 0.2, // Add slight stagger to elements like text
-        }
-      );
+      });
     }
     setIsLoading(false);
   }, [currentIndex]);
