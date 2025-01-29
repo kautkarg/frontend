@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@gsap/react": "^2.1.2",
+    "@mui/icons-material": "^6.4.1",
     "@studio-freight/lenis": "^1.0.42",
     "axios": "^1.7.9",
     "framer-motion": "^12.0.5",
