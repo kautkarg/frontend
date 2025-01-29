@@ -33,21 +33,23 @@ const App = () => {
       quick fix or a comprehensive solution, we’ve got you covered and
       customized.
     </p>
-    <div className="flex flex-wrap justify-center gap-4 mb-8">
-      <span className="inline-flex items-center space-x-2">
-        <CheckCircle className="text-green-600" />
-        <span>Customized Design</span>
-      </span>
+    <div className="flex flex-col items-center  md:flex-row md:flex-wrap md:justify-center gap-4 mb-8">
+      <div className="flex flex-col  md:flex-row md:flex-wrap md:justify-center gap-4 mb-8">
+        <span className="inline-flex items-center space-x-2">
+          <CheckCircle className="text-green-600" />
+          <span>Customized Design</span>
+        </span>
 
-      <span className="inline-flex items-center space-x-2">
-        <CheckCircle className="text-green-600" />
-        <span>Ongoing Support</span>
-      </span>
+        <span className="inline-flex items-center space-x-2">
+          <CheckCircle className="text-green-600" />
+          <span>Ongoing Support</span>
+        </span>
 
-      <span className="inline-flex items-center space-x-2">
-        <CheckCircle className="text-green-600" />
-        <span>Fast Delivery</span>
-      </span>
+        <span className="inline-flex items-center space-x-2">
+          <CheckCircle className="text-green-600" />
+          <span>Fast Delivery</span>
+        </span>
+      </div>
     </div>
     <a
       href="#"
