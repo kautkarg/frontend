@@ -6,35 +6,35 @@ const testimonials = [
     text: "‘Univens connected us with the right marketing experts at the perfect time. They made our growth seamless.’",
     name: "Raj",
     role: "Startup Founder",
-    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/raj.jpg",
+    image: "raj.jpg",
     rating: 5,
   },
   {
     text: "‘We got exactly what you needed—no fuss, no delay. Univens just works.’",
     name: "Priya",
     role: "Scale-up Founder",
-    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/priya.jpg",
+    image: "priya.jpg",
     rating: 5,
   },
   {
     text: "‘Working with Univens was a game changer for our business. Their team truly understood our needs.’",
     name: "Emily",
     role: "Business Owner",
-    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/emily.jpg",
+    image: "emily.jpg",
     rating: 5,
   },
   {
     text: "‘The level of professionalism and expertise at Univens exceeded our expectations. Highly recommend!’",
     name: "James",
     role: "CEO",
-    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/james.jpg",
+    image: "james.jpg",
     rating: 5,
   },
   {
     text: "‘Univens helped us streamline our processes, and the results speak for themselves.’",
     name: "Michael",
     role: "Operations Manager",
-    image: "https://euhfmfenonopvmoowvbb.supabase.co/storage/v1/object/public/product-images/uploads/Users%20DP/michele.jpg",
+    image: "michele.jpg",
     rating: 4,
   },
 ];
@@ -55,12 +55,12 @@ const TestimonialsSection = () => {
     const testimonial = testimonialRef.current;
     if (testimonial) {
       gsap.to(testimonial, {
-        opacity: 0, // Fade out the current testimonial
-        duration: 0.5, // Fade-out duration
+        opacity: 0, 
+        duration: 0.5,
         onComplete: () => {
           gsap.to(testimonial, {
-            opacity: 1, // Fade in the new testimonial
-            duration: 1, // Fade-in duration
+            opacity: 1, 
+            duration: 1,
             ease: "power3.out",
           });
         },
@@ -79,7 +79,6 @@ const TestimonialsSection = () => {
           Discover the experiences and success stories of our clients working with Univens.
         </p>
 
-        {/* Loading Spinner */}
         {isLoading && (
           <div className="flex justify-center items-center mb-6">
             <div className="w-12 h-12 border-4 border-t-4 border-blue-400 border-solid rounded-full animate-spin"></div>
