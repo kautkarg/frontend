@@ -44,6 +44,11 @@ const Slider = () => {
     }
   };
 
+  const handleSelection1 = (event)=>{
+    const selectedValue = event.target.value;
+    setObj((prevObj) => ({ ...prevObj, lookingFor: selectedValue }));
+  }
+
   const handleSelection = (e, prevRef) => {
     if (prevRef.current !== null) {
       prevRef.current.classList.remove('bg-white', 'text-black');
@@ -58,13 +63,16 @@ const Slider = () => {
   const cards = [
     {
       title: '1. What are you looking for *',
-      description: 'Choose As Many As You Like',
-      content: ['IT Services', 'Marketing Services', 'HR Solutions', 'Other Services'].map((service, idx) => (
-        <button onClick={(e) => handleSelection(e, prev)} key={idx} className="bg-transparent shadow-xl px-4 py-2 rounded-lg flex items-center">
-          <span className="mr-3 bg-[#295AAD] text-white rounded-full w-6 h-6 flex items-center justify-center">{idx + 1}</span>
-          {service}
-        </button>
-      )),
+      description: 'Choose One',
+      content: (
+        <select onChange={handleSelection1} className="bg-transparent shadow-xl px-4 py-2 rounded-lg text-white">
+          <option value="" disabled selected>Select an option</option>
+          <option value="IT Services">IT Services</option>
+          <option value="Marketing Services">Marketing Services</option>
+          <option value="HR Solutions">HR Solutions</option>
+          <option value="Other Services">Other Services</option>
+        </select>
+      ),
     },
     {
       title: '2. Describe Your Requirement *',
@@ -166,15 +174,6 @@ const Slider = () => {
   };
 
   const handleNext = async () => {
-    if (!prev.current) {
-      toast("✅ select option to move forward");
-      return;
-    }
-
-    if (index === 0 && prev.current) {
-      const text = String(prev.current.textContent).split('(')[0].trim().slice(1);
-      setObj((x) => ({ ...x, lookingFor: text }));
-    }
 
     if (index === 1 && textAreaRef.current.value) {
       setObj((x) => ({ ...x, description: textAreaRef.current.value }));
@@ -205,6 +204,7 @@ const Slider = () => {
         })
           .then((response) => {
             toast("✅ Data uploaded successfully!");
+            console.log(response.data);
             setFileId(response.data.data._id);
           })
           .catch(() => {
