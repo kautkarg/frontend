@@ -9,16 +9,18 @@
 
 ::-webkit-scrollbar-thumb {
   background: #010102;
+  cursor: grab;
   transition: background 0.3s ease-in-out;
+  height: 20%;
+  transition: all 1s ease-in-out;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #29296b, #4a4a9d);
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ececec;
-  height: 90%;
+  background:rgba(42, 88, 174, 0.292) ;
 }
 
 ::-webkit-scrollbar-corner {
