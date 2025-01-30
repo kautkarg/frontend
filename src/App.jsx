@@ -20,6 +20,8 @@ const TestimonialsSection = lazy(() => import('./components/TestimonialsSection'
 
 function App() {
 
+  const handleSelection= (e) => e.preventDefault()
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -37,8 +39,11 @@ function App() {
 
     lenis.on('scroll', ScrollTrigger.update);
 
+    document.addEventListener("selectstart",handleSelection);
+
     return () => {
       lenis.destroy();
+      document.removeEventListener("selectstart",handleSelection);
     };
   }, []);
 
