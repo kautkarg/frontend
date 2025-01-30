@@ -13,6 +13,8 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import AnimatedLoader from './components/AnimatedLoader';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 const Hero = lazy(() => import('./components/Hero'));
@@ -23,28 +25,36 @@ function App() {
   const handleSelection= (e) => e.preventDefault()
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+      axios.get("http://localhost:8080/")
+      .then((res)=>{
+        toast.success("connected");
+      })
+      .catch((err)=>{
+        toast.error("Internal Server Issue");
+      })
+      
+      gsap.registerPlugin(ScrollTrigger);
 
-    const lenis = new Lenis({
-      duration: 1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-    });
+      const lenis = new Lenis({
+        duration: 1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+      });
 
-    const raf = (time) => {
-      lenis.raf(time);
+      const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
       requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
 
-    lenis.on('scroll', ScrollTrigger.update);
+      lenis.on('scroll', ScrollTrigger.update);
 
-    document.addEventListener("selectstart",handleSelection);
+      document.addEventListener("selectstart",handleSelection);
 
-    return () => {
-      lenis.destroy();
-      document.removeEventListener("selectstart",handleSelection);
-    };
+      return () => {
+        lenis.destroy();
+        document.removeEventListener("selectstart",handleSelection);
+      };
   }, []);
 
   return (
