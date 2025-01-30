@@ -5,6 +5,9 @@ const Hero = () => {
       className="w-full max-w-[1260px] min-h-screen mx-auto flex flex-col items-center gap-12 px-6 py-20 bg-[#010102] text-white"
     >
       <div className="text-center">
+        <p className="text-[10px] sm:text-[12px] md:text-[14px] font-medium uppercase tracking-widest text-gray-400" style={{ fontFamily: 'Roboto, sans-serif' }}>
+          Features
+        </p>
         <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
           Struggling to Find the Right Solutions for Your Business?
         </h5>

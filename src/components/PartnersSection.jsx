@@ -40,35 +40,32 @@ const PartnersSection = () => {
   }, [logos]);
 
   return (
-    <div className="relative w-full md:w-1/2 overflow-hidden py-10 mx-auto">
-      {/* <div className="flex flex-col justify-center">
-        <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6 mx-auto" style={{ fontFamily: 'Roboto, sans-serif' }}>
-            Our Experts Work with Partners
-        </h5> */}
-        <p className="text-center text-sm sm:text-base font-medium uppercase tracking-wide text-gray-400 my-8">
+    <div className=" relative w-full  md:w-1/2 overflow-hidden mx-auto">
+
+       <p className="text-center text-sm sm:text-base font-medium uppercase tracking-wide text-gray-400 my-8">
           Our Partners Worked With
         </p>
-        <div
-          ref={containerRef}
-          className="flex justify-center items-center whitespace-nowrap"
-        >
-          {[...logos, ...logos].map((logo, index) => (
-            <img
-              key={index}
-              ref={handleRef}
-              src={`/logo/${logo}`}
-              alt={logo}
-              className="h-10 mx-5 md:h-12 opacity-80 hover:opacity-100 cursor-pointer"
-              style={{
-                width: "10%",
-                aspectRatio: "3 / 2",
-                objectFit: "contain",
-                ...(index % 5 !== 4 && { filter: "invert(1)" }),
-              }}
-            />
-          ))}
-        </div>
-      {/* </div> */}
+  
+      <div
+        ref={containerRef}
+        className="flex justify-center items-center whitespace-nowrap"
+      >
+        {[...logos, ...logos].map((logo, index) => (
+          <img
+            key={index}
+            ref={handleRef}
+            src={`/logo/${logo}`}
+            alt={logo}
+            className="h-10 mx-5 md:h-12 opacity-80 hover:opacity-100 cursor-pointer"
+            style={{
+              width: "10%",
+              aspectRatio: "3 / 2",
+              objectFit: "contain",
+              ...(index % 5 !== 4 && { filter: "invert(1)" }),
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
