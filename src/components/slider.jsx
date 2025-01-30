@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -18,6 +18,26 @@ const Slider = () => {
 
   const handleFileChange = (event) => setFiles(event.target.files);
 
+  const handleCardUpwardCurrent = ()=>{
+    gsap.to(`.card-${index}`, { 
+      top: "-130%", 
+      scale: 0, 
+      duration: 0.8, 
+      ease: "power2.inOut" 
+    });
+  }
+
+  const handleCardUpwardNext = (delay)=>{
+    gsap.set(".card-0", { scale: 0.85, top: "100%" });
+    gsap.to(".card-0", {
+      delay,
+      scale: 0.85,
+      top: "-6%",
+      duration: 1,
+      ease: "power2.inOut"
+    });
+  }
+
   const onSubmit = async (data) => {
     try {
       const jsonData = {
@@ -34,9 +54,8 @@ const Slider = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      if(response){
-
-      }
+      handleCardUpwardCurrent();
+      handleCardUpwardNext(5)
       toast.success("✅ Form submitted successfully!");
     } catch (error) {
       console.error("Error:", error);
@@ -44,10 +63,10 @@ const Slider = () => {
     }
   };
 
-  const handleSelection1 = (event)=>{
-    const selectedValue = event.target.value;
-    setObj((prevObj) => ({ ...prevObj, lookingFor: selectedValue }));
-  }
+  const handleSelection1 = useCallback((event) => {
+    setObj((prevObj) => ({ ...prevObj, lookingFor: event.target.value }));
+  }, []);
+  
 
   const handleSelection = (e, prevRef) => {
     if (prevRef.current !== null) {
@@ -65,8 +84,12 @@ const Slider = () => {
       title: '1. What are you looking for *',
       description: 'Choose One',
       content: (
-        <select onChange={handleSelection1} className="bg-transparent shadow-xl px-4 py-2 rounded-lg text-white">
-          <option value="" disabled selected>Select an option</option>
+        <select
+          value={obj.lookingFor}
+          onChange={handleSelection1}
+          className="bg-transparent shadow-xl px-4 py-2 rounded-lg text-white"
+        >
+          <option value="" disabled>Select an option</option>
           <option value="IT Services">IT Services</option>
           <option value="Marketing Services">Marketing Services</option>
           <option value="HR Solutions">HR Solutions</option>
@@ -153,14 +176,9 @@ const Slider = () => {
   ];
 
   useGSAP(() => {
-    gsap.set(".card-0", { scale: 0.85, top: "100%" });
-    gsap.to(".card-0", {
-      delay: 0.75,
-      scale: 0.85,
-      top: "-6%",
-      duration: 1,
-      ease: "power2.inOut"
-    });
+    if( index === 0 ){
+      handleCardUpwardNext(0.75);
+    } 
   });
 
   const handlePrev = () => {
@@ -217,16 +235,16 @@ const Slider = () => {
       return;
     }
 
-    gsap.to(`.card-${index}`, { 
-      top: "-130%", 
-      scale: 0, 
-      duration: 0.8, 
-      ease: "power2.inOut" 
-    });
+    handleCardUpwardCurrent();
 
     setIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % cards.length;
-      gsap.to(`.card-${newIndex}`, { top: "-6%", scale: 0.85, duration: 0.8, ease: "power2.inOut" });
+      gsap.to(`.card-${newIndex}`, { 
+        top: "-6%", 
+        scale: 0.85, 
+        duration: 0.8, 
+        ease: "power2.inOut" 
+      });
       return newIndex;
     });
   };

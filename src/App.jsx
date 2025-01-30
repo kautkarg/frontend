@@ -23,23 +23,21 @@ const TestimonialsSection = lazy(() => import('./components/TestimonialsSection'
 function App() {
   const handleSelection = (e) => e.preventDefault();
 
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ['serverConnection'],
-    queryFn: async () => {
-      const response = await axios.get('http://localhost:8080/');
-      console.log("Response:", response.data);
-      toast.success('Connected to server');
-      return response.data;
-    },
-    retry: true, 
-    retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 30000), 
-    onSuccess: (data) => {
-      console.log("Connected:", data);
-    },
-    onError: (error) => {
-      console.error("Error:", error);
-    },
-  });
+    const { data, isLoading, isError, error } = useQuery({
+      queryKey: ['serverConnection'],
+      queryFn: async () => {
+        const response = await axios.get('http://localhost:8080/');
+        return response.data;
+      },
+      retry: true, 
+      retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 30000), 
+      onSuccess: (data) => {
+        console.log("Connected:", data);
+      },
+      onError: (error) => {
+        console.error("Error:", error);
+      },
+    });
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
