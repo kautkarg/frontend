@@ -1,4 +1,7 @@
 import React, { useEffect, Suspense, lazy } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -13,72 +16,80 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import AnimatedLoader from './components/AnimatedLoader';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-
 
 const Hero = lazy(() => import('./components/Hero'));
 const TestimonialsSection = lazy(() => import('./components/TestimonialsSection'));
 
 function App() {
+  const handleSelection = (e) => e.preventDefault();
 
-  const handleSelection= (e) => e.preventDefault()
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ['serverConnection'],
+    queryFn: async () => {
+      const response = await axios.get('http://localhost:8080/');
+      console.log("Response:", response.data);
+      toast.success('Connected to server');
+      return response.data;
+    },
+    retry: true, 
+    retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 30000), 
+    onSuccess: (data) => {
+      console.log("Connected:", data);
+    },
+    onError: (error) => {
+      console.error("Error:", error);
+    },
+  });
 
   useEffect(() => {
-      axios.get("http://localhost:8080/")
-      .then((res)=>{
-        toast.success("connected");
-      })
-      .catch((err)=>{
-        toast.error("Internal Server Issue");
-      })
-      
-      gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-      const lenis = new Lenis({
-        duration: 1,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smooth: true,
-      });
+    const lenis = new Lenis({
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
 
-      const raf = (time) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
+    const raf = (time) => {
+      lenis.raf(time);
       requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
 
-      lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', ScrollTrigger.update);
 
-      document.addEventListener("selectstart",handleSelection);
+    document.addEventListener('selectstart', handleSelection);
 
-      return () => {
-        lenis.destroy();
-        document.removeEventListener("selectstart",handleSelection);
-      };
+    return () => {
+      lenis.destroy();
+      document.removeEventListener('selectstart', handleSelection);
+    };
   }, []);
 
   return (
     <div className="scroll-container pb-0">
-      <div id="home"></div>
-      <div data-scroll-container className="bg-[#010102] text-white font-sans min-h-screen flex flex-col pb-0">
-        <div className="BG w-full overflow-hidden relative">
-          <div className="glow-quarter"></div>
-          <div className="glow-inner"></div>
-          <Header />
-          <HeroSection />
-        </div>
-        <PartnersSection />
-        <Suspense fallback={<AnimatedLoader />}>
-          <TestimonialsSection />
-        </Suspense>
-        <Suspense fallback={<AnimatedLoader />}>
-          <Hero />
-        </Suspense>
-        <Cards />
-        <Comparison />
-        <Work />
-        <FAQ />
-        <Footer />
+        <div
+          data-scroll-container
+          className="bg-[#010102] text-white font-sans min-h-screen flex flex-col pb-0"
+        >
+          <div className="BG w-full overflow-hidden relative">
+            <div className="glow-quarter"></div>
+            <div className="glow-inner"></div>
+            <Header />
+            <HeroSection />
+          </div>
+          <PartnersSection />
+          <Suspense fallback={<AnimatedLoader />}>
+            <TestimonialsSection />
+          </Suspense>
+          <Suspense fallback={<AnimatedLoader />}>
+            <Hero />
+          </Suspense>
+          <Cards />
+          <Comparison />
+          <Work />
+          <FAQ />
+          <Footer />
       </div>
     </div>
   );
