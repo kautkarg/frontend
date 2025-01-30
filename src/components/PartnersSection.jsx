@@ -41,10 +41,13 @@ const PartnersSection = () => {
 
   return (
     <div className="relative w-full md:w-1/2 overflow-hidden py-10 mx-auto">
-      <div className="flex flex-col justify-center">
+      {/* <div className="flex flex-col justify-center">
         <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6 mx-auto" style={{ fontFamily: 'Roboto, sans-serif' }}>
             Our Experts Work with Partners
-        </h5>
+        </h5> */}
+        <p className="text-center text-sm sm:text-base font-medium uppercase tracking-wide text-gray-400 my-8">
+          Our Partners Worked With
+        </p>
         <div
           ref={containerRef}
           className="flex justify-center items-center whitespace-nowrap"
@@ -65,7 +68,7 @@ const PartnersSection = () => {
             />
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };
