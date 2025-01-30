@@ -19,11 +19,11 @@ const Slider = () => {
   const handleFileChange = (event) => setFiles(event.target.files);
 
   const handleCardUpwardCurrent = ()=>{
-    gsap.to(`.card-${index}`, { 
-      top: "-130%", 
-      scale: 0, 
-      duration: 0.8, 
-      ease: "power2.inOut" 
+    gsap.to(`.card-${index}`, {
+      top: "-130%",
+      scale: 0,
+      duration: 0.8,
+      ease: "power2.inOut"
     });
   }
 
@@ -66,7 +66,7 @@ const Slider = () => {
   const handleSelection1 = useCallback((event) => {
     setObj((prevObj) => ({ ...prevObj, lookingFor: event.target.value }));
   }, []);
-  
+
 
   const handleSelection = (e, prevRef) => {
     if (prevRef.current !== null) {
@@ -178,7 +178,7 @@ const Slider = () => {
   useGSAP(() => {
     if( index === 0 ){
       handleCardUpwardNext(0.75);
-    } 
+    }
   },[]);
 
   const handlePrev = () => {
@@ -239,11 +239,11 @@ const Slider = () => {
 
     setIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % cards.length;
-      gsap.to(`.card-${newIndex}`, { 
-        top: "-6%", 
-        scale: 0.85, 
-        duration: 0.8, 
-        ease: "power2.inOut" 
+      gsap.to(`.card-${newIndex}`, {
+        top: "-6%",
+        scale: 0.85,
+        duration: 0.8,
+        ease: "power2.inOut"
       });
       return newIndex;
     });
@@ -262,7 +262,7 @@ const Slider = () => {
                 {card.content}
                 { cardIndex !== 4 &&
                 <div className='flex gap-5'>
-                  <button onClick={handleNext} className={`${cardIndex !== 0 ? "mt-6" : ""} bg-[#295AAD] md:text-sm text-[1vh] text-white px-4 py-2 rounded-sm hover:bg-[#295AAD]`}>
+                  <button onClick={handleNext} className={`${cardIndex !== 0 ? "mt-6" : ""} bg-[#295AAD] md:text-sm text-[1vh] text-white px-4 py-2 rounded-full hover:bg-[#295AAD]`}>
                     {cardIndex === 0 ? "Get Started" : "Next"}
                   </button>
                   { cardIndex!==0 && <button onClick={handlePrev} className={`${cardIndex !== 4 ? "mt-6" : ""} bg-${cardIndex === 0 ? "#2959ad6a" : "#295AAD"} text-white px-6 py-2 rounded-sm ${(cardIndex !== 0) && "hover:bg-[#295AAD]"}`}>
