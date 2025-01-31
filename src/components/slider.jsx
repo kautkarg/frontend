@@ -264,14 +264,14 @@ const Slider = () => {
               <div className="flex gap-5 flex-wrap">
                 <button
                   onClick={handleNext}
-                  className="bg-[#295AAD] text-white text-base px-6 py-3 rounded-full hover:bg-[#295AAD] w-32 text-center"
+                  className={`bg-[#295AAD] text-white text-base px-1 py-2 ${cardIndex !==0 && "mt-2"} rounded-full hover:bg-[#295AAD] w-28 text-center`}
                 >
                   {cardIndex === 0 ? "Get Started" : "Next"}
                 </button>
                 {cardIndex !== 0 && (
                   <button
                     onClick={handlePrev}
-                    className="bg-[#295AAD] text-white text-base px-6 py-3 rounded-sm hover:bg-[#295AAD] w-32 text-center"
+                    className="bg-[#295AAD] rounded-full text-white text-base mt-2 px-1 py-2 hover:bg-[#295AAD] w-28 text-center"
                   >
                     {cardIndex === 0 ? <s> Previous </s> : "Previous"}
                   </button>
