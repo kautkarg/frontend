@@ -260,15 +260,24 @@ const Slider = () => {
                 { cardIndex!==0 && <p className="text-sm font-semibold mb-2">{card.title}</p> }
                 { cardIndex!==0 && cardIndex!==4 && <p className="text-sm text-gray-400 mb-5">{card.description}</p> }
                 {card.content}
-                { cardIndex !== 4 &&
-                <div className='flex gap-5'>
-                  <button onClick={handleNext} className={`${cardIndex !== 0 ? "mt-6" : ""} bg-[#295AAD] md:text-sm text-[1vh] text-white px-4 py-2 rounded-full hover:bg-[#295AAD]`}>
-                    {cardIndex === 0 ? "Get Started" : "Next"}
-                  </button>
-                  { cardIndex!==0 && <button onClick={handlePrev} className={`${cardIndex !== 4 ? "mt-6" : ""} bg-${cardIndex === 0 ? "#2959ad6a" : "#295AAD"} text-white px-6 py-2 rounded-sm ${(cardIndex !== 0) && "hover:bg-[#295AAD]"}`}>
+                {cardIndex !== 4 && (
+              <div className="flex gap-5 flex-wrap">
+                <button
+                  onClick={handleNext}
+                  className="bg-[#295AAD] text-white text-base px-6 py-3 rounded-full hover:bg-[#295AAD] w-32 text-center"
+                >
+                  {cardIndex === 0 ? "Get Started" : "Next"}
+                </button>
+                {cardIndex !== 0 && (
+                  <button
+                    onClick={handlePrev}
+                    className="bg-[#295AAD] text-white text-base px-6 py-3 rounded-sm hover:bg-[#295AAD] w-32 text-center"
+                  >
                     {cardIndex === 0 ? <s> Previous </s> : "Previous"}
-                  </button> }
-                </div>}
+                  </button>
+                )}
+              </div>
+            )}
               </div>
             </div>
           ))}
