@@ -1,3 +1,4 @@
+const apiUrl = import.meta.env.VITE_API_URL;
 import React, { useState, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -50,7 +51,7 @@ const Slider = () => {
         role:"Bussiness",
       };
 
-      const response = await axios.post("http://localhost:8080/user/create", jsonData, {
+      const response = await axios.post(`${apiUrl}/user/create`, jsonData, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -217,7 +218,7 @@ const Slider = () => {
         formData.append('communicationChannel', newObj.communicationChannel);
         Array.from(files).forEach((file) => formData.append('file', file));
 
-        axios.post('http://localhost:8080/file/create', formData, {
+        axios.post(`${apiUrl}/file/create`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         })
           .then((response) => {
@@ -225,7 +226,8 @@ const Slider = () => {
             console.log(response.data);
             setFileId(response.data.data._id);
           })
-          .catch(() => {
+          .catch((err) => {
+            console.log(err);
             toast("❌ Something went wrong");
           });
         return newObj;
