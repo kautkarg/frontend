@@ -2,7 +2,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 import React, { useState, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 
