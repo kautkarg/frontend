@@ -84,8 +84,7 @@ const Testimonials = () => {
         </button>
         <div className="container mx-auto text-center z-[10]">
           <h5
-            className="text-2xl sm:text-3xl md:text-4xl z-[10] font-semibold mt-2 mb-6"
-            style={{ fontFamily: "Roboto, sans-serif" }}
+           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mt-2 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             What Our Clients Are Saying
           </h5>
