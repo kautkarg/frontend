@@ -29,7 +29,8 @@ export default function WorkTogether() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="text-white py-16 px-4 md:px-16">
+    <div ref={sectionRef} className="text-white py-16 px-4 md:px-16 relative min-w-screen">
+      <img className="h-[25vh] w-full opacity-[50%] object-fill top-1/2 left-0 transform translate-y-full bg-cover filter brightness-30 contrast-125 z-[1]" src="/img5.avif"/>
       <div className="text-center fade-in">
         <p className="text-lg font-semibold  text-gray-400">Business Models to Connect Over</p>
         <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>How We Work Together</h5>

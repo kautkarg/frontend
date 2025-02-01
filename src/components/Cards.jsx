@@ -4,14 +4,21 @@ const Cards = () => {
   return (
     <div
       id="process"
-      className="w-full max-w-[1260px] mx-auto flex flex-col items-center gap-12 px-6 md:px-8 py-16 bg-gradient-to-r text-white"
+      className="w-full max-w-[1260px] relative mx-auto flex flex-col items-center gap-12 px-6 md:px-8 py-16 text-white"
     >
-      {/* Section Header */}
-      <div className="text-center">
+      <div className="absolute inset-0 z-0">
+        <img 
+          className="w-screen h-full object-cover opacity-50 filter brightness-30 contrast-125" 
+          src="/img5.avif" 
+          alt="Background"
+        />
+      </div>
+
+      <div className="relative z-10 text-center">
         <p className="text-sm sm:text-base font-medium uppercase tracking-widest text-gray-400">
           How It Works
         </p>
-        <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
+        <h5 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
           Getting Started Is Easy
         </h5>
         <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-[720px] mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -21,9 +28,7 @@ const Cards = () => {
         </p>
       </div>
 
-      {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Card 1 */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6">
             <Assignment />
@@ -36,7 +41,6 @@ const Cards = () => {
           </p>
         </div>
 
-        {/* Card 2 */}
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6">
             <Handshake />
@@ -49,7 +53,6 @@ const Cards = () => {
           </p>
         </div>
 
-        {/* Card 3 */}
         <div className="flex flex-col items-center text-center p-8 bg-gray-800 rounded-xl shadow-lg">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-700 text-3xl rounded-full mb-6">
             <Star />

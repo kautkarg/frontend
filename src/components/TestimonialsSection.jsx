@@ -75,7 +75,7 @@ const TestimonialCard = ({ testimonial }) => (
 const Testimonials = () => {
   return (
     <section id="testimonials" className="py-12 h-screen flex items-center justify-center flex-col relative pt-10">
-         <img className="h-[25vh] w-screen opacity-[50%] object-fill top-1/2 left-0 transform translate-y-full bg-cover filter brightness-30 contrast-125 z-[1]" src="/img5.avif" alt=""/>
+        <img className="h-[25vh] w-screen opacity-[50%] object-fill top-1/2 left-0 transform translate-y-full bg-cover filter brightness-30 contrast-125 z-[1]" src="/img5.avif" alt=""/>
         <button
           className="text-center text-sm p-1 sm:text-base z-[10] font-medium uppercase tracking-wide text-gray-400 gap-2"
           style={{ fontFamily: "Montserrat, sans-serif" }}

@@ -25,9 +25,9 @@ const FAQHeader = () => {
   }, []);
 
   return (
-    <div ref={headerRef} className="text-center px-6 mb-12">
+    <div ref={headerRef} className="text-center px-6 mb-12 ">
       <p className="text-sm sm:text-base font-medium uppercase tracking-widest text-gray-400">FAQ</p>
-      <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
+      <h5 className="text-2xl sm:text-3xl md:text-4xl text-gray-50 font-semibold mt-2 mb-6 " style={{ fontFamily: 'Roboto, sans-serif' }}>
         Got Questions? We’ve Got Answers.
       </h5>
       <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-[720px] mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -220,7 +220,8 @@ const FAQFooter = () => {
 
 const FAQ = () => (
   <div id="faq" className="text-white min-h-screen py-16 bg-[#010102]">
-    <div className="container mx-auto">
+    <div className="container mx-auto relative">
+    <img className="h-[25vh] w-screen opacity-[50%] object-fill top-1/2 left-0 transform translate-y-full bg-cover filter brightness-30 contrast-125" src="/img5.avif"/>
       <FAQHeader />
       <FAQSection />
       <FAQFooter />
