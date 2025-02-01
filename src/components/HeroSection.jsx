@@ -1,4 +1,4 @@
-import Slider from "./Slider";
+import Slide from "./Slide";
 
 const HeroSection = () => {
   return (
@@ -9,7 +9,7 @@ const HeroSection = () => {
         Focus on what matters, grow your business with <br className="hidden md:block" /> trusted solutions from reliable experts.
       </h2>
     </div>
-    <Slider/>
+    <Slide/>
     </>
   );
 };
