@@ -1,4 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
+const apiUrl = import.meta.env.VITE_API_URL;
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -26,7 +27,7 @@ function App() {
     const { data, isLoading, isError, error } = useQuery({
       queryKey: ['serverConnection'],
       queryFn: async () => {
-        const response = await axios.get('http://localhost:8080/');
+        const response = await axios.get(apiUrl);
         return response.data;
       },
       retry: true, 
