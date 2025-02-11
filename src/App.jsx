@@ -99,7 +99,7 @@ function App() {
             <Header />
             <HeroSection />
           </div>
-          <PartnersSection />
+            <PartnersSection />
           <Suspense fallback={<AnimatedLoader />}>
             <TestimonialsSection />
           </Suspense>

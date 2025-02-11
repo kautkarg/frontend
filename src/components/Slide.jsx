@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import {ToastContainer, toast} from 'react-toastify';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
+import "react-toastify/dist/ReactToastify.css";
 
 const Slide = () => {
   const [index, setIndex] = useState(0);
@@ -39,6 +40,35 @@ const Slide = () => {
 
   const onSubmit = async (data) => {
     try {
+      if (!data.fullName) {
+        toast.error("❌ Your full name is required", { position: "top-center" });
+        return;
+      }
+      if (!data.companyName) {
+        toast.error("❌ Company/Business name is required", { position: "top-center" });
+        return;
+      }
+      if (!data.role) {
+        toast.error("❌ Your role is required", { position: "top-center" });
+        return;
+      }
+      if (!data.email) {
+        toast.error("❌ Your e-mail is required", { position: "top-center" });
+        return;
+      }
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(data.email)) {
+        toast.error("❌ Enter a valid email", { position: "top-center" });
+        return;
+      }
+      if (!data.phone) {
+        toast.error("❌ Your phone number is required", { position: "top-center" });
+        return;
+      }
+      if (!/^[0-9]{10,15}$/.test(data.phone)) {
+        toast.error("❌ Enter a valid phone number", { position: "top-center" });
+        return;
+      }
+  
       const jsonData = {
         fullname: data.fullName,
         companyName: data.companyName,
@@ -123,69 +153,49 @@ const Slide = () => {
       title: "Let's get to know you and your business *",
       description: 'Fill it carefully!',
       content: (
-        <form onSubmit={handleSubmit(onSubmit)} className="text-white">
+        <form onSubmit={handleSubmit(onSubmit)} className="text-white z-[100000]">
         <div className="mb-4">
           <input
             type="text"
-            placeholder="Your full name"
-            {...register("fullName", { required: "Your full name is required" })}
-            className="inline bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-full"
+            placeholder="Full name"
+            {...register("fullName")}
+            className=" bg-gray-950 shadow-xl  text-white px-5 py-3 rounded-full border w-full"
           />
-          {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
         </div>
-      <div className='flex justify-between items-center'>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Company/ Business name"
-            {...register("companyName", { required: "Enter your company/ business name is required" })}
-            className=" bg-gray-950 shadow-xl text-white outline-none px-5 py-3 rounded-full border w-[110%]"
-          />
-          {errors.companyName && <p className="text-red-500 text-xs mt-1">{errors.companyName.message}</p>}
+        <div className="flex justify-between gap-10 w-full mb-4">
+          <div className='w-full h-full'>
+            <input
+              type="text"
+              placeholder="Company/ Business name"
+              {...register("companyName")}
+              className="bg-gray-950 shadow-xl text-white outline-none px-5 py-3 rounded-full border w-[120%] md:w-[110%]"
+            />
+          </div>
+          <div className='w-[60%] h-full'>
+            <input
+              type="text"
+              placeholder="role"
+              {...register("role")}
+              className="bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-[75%] md:w-full"
+            />
+          </div>
         </div>
-      
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Your role"
-            {...register("role", { required: "Your role is required" })}
-            className="inline bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-full"
-          />
-          {errors.role && <p className="text-red-500 text-xs mt-1">{errors.role.message}</p>}
-        </div>
-      </div>
         <div className="mb-4">
           <input
             type="email"
-            placeholder="Your e-mail"
-            {...register("email", {
-              required: "Your e-mail is required",
-              pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                message: "Enter a valid email",
-              },
-            })}
+            placeholder="E-mail"
+            {...register("email")}
             className="inline bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-full"
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
         </div>
-      
         <div className="mb-4">
           <input
             type="tel"
-            placeholder="Your number to hear back from us"
-            {...register("phone", {
-              required: "Your number to hear back from us is required",
-              pattern: {
-                value: /^[0-9]{10,15}$/,
-                message: "Enter a valid phone number",
-              },
-            })}
+            placeholder="Number to hear back from us"
+            {...register("phone")}
             className="inline bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-full"
           />
-          {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
         </div>
-      
         <div className="mb-4">
           <input
             type="text"
@@ -193,9 +203,7 @@ const Slide = () => {
             {...register("companyWebsite")}
             className="inline bg-gray-950 shadow-xl outline-none text-white px-5 py-3 rounded-full border w-full"
           />
-          {errors.companyWebsite && <p className="text-red-500 text-xs mt-1">{errors.companyWebsite.message}</p>}
         </div>
-      
         <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-xl mt-0">
           Submit
         </button>
@@ -273,9 +281,9 @@ const Slide = () => {
 
   return (
     <>
-      <ToastContainer />
-      <div className="text-white font-sans h-[80vh] flex flex-col">
-        <div className="overflow-hidden -translate-y-5 relative min-h-[80vh] flex-grow">
+      <ToastContainer style={{ zIndex: 100000000000 }} position="top-center" />
+      <div className="text-white font-sans h-[100vh] flex flex-col">
+        <div className="overflow-hidden -translate-y-5 relative min-h-[100vh] flex-grow font">
           {cards.map((card, cardIndex) => (
             <div key={cardIndex} className={`card-${cardIndex} ${cardIndex===0 ? "scale-[1]" : "scale-[0.85]"}  absolute top-[-130%] left-1/2 -translate-x-1/2 min-w-96 max-w-xl w-full h-full flex justify-center items-start`}>
               <div className={`${cardIndex===0 && "flex gap-3"} text-white ${cardIndex!==0 && "p-6 rounded-lg"} w-full max-w-2xl ${cardIndex!==0&&"bg-black"}`}>
