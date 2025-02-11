@@ -1,10 +1,27 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 export default function NotFound() {
+  const astroRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(astroRef.current, {
+      y: -5,
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-black text-white p-6">
       <div className="mt-10 md:mt-0 md:ml-10 flex justify-center">
         <img
+          ref={astroRef}
+          id="astro"
           src="/PageNotFound.png"
           alt="Astronaut Floating"
           className="w-64 md:w-80 lg:w-96"
