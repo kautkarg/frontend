@@ -79,7 +79,7 @@ const Slide = () => {
         role:data.role,
       };
 
-      const response = await axios.post(`${apiUrl}/user/create`, jsonData, {
+      const response = await axios.post('https://univens-backend-1.onrender.com//user/create', jsonData, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -250,7 +250,7 @@ const Slide = () => {
       formData.append('description', obj.description);
       Array.from(files).forEach((file) => formData.append('file', file));
 
-      axios.post(`${apiUrl}/file/create`, formData, {
+      axios.post('https://univens-backend-1.onrender.com//file/create', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       }).then((response) => {
         toast("✅ Data uploaded successfully!",{
