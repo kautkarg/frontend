@@ -79,7 +79,7 @@ const Slide = () => {
         role:data.role,
       };
 
-      const response = await axios.post("https://www.univens.in/user/create", jsonData, {
+      const response = await axios.post("https://backend-eta-one-56.vercel.app/user/create", jsonData, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -250,7 +250,7 @@ const Slide = () => {
       formData.append('description', obj.description);
       Array.from(files).forEach((file) => formData.append('file', file));
 
-      axios.post("https://www.univens.in/file/create", formData, {
+      axios.post("https://backend-eta-one-56.vercel.app/file/create", formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       }).then((response) => {
         toast("✅ Data uploaded successfully!",{
